@@ -29,7 +29,7 @@ function startNotifications() {
     setInterval(() => {
         showNotification(notifications[index]);
         index = (index + 1) % notifications.length;
-    }, 1800000); // 1800000 ms = 30 minutes
+    }, 60000); // 1800000 ms = 30 minutes
 }
 
 // Request permission to show notifications
