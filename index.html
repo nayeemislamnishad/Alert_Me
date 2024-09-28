@@ -1,52 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Video Embed</title>
-  <style>
-    body {
-      background-color: #f2f7f2;
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
-
-    .video-container {
-      background-color: #333;
-      border-radius: 8px;
-      padding: 20px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-
-    video {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery Upload</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="video-container">
-    <video controls>
-      <source src="your-video.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-    <iframe width="1920" height="1080" src="https://www.eporner.com/embed/F327o3senck/" frameborder="0" allowfullscreen></iframe>
-    <iframe width="1920" height="1080" src="https://bit.ly/3ZHFZDT" frameborder="0" allowfullscreen></iframe>
+    <div class="container">
+        <h1>Upload Your Photos and Videos</h1>
+        <input type="file" id="fileInput" multiple accept="image/*,video/*">
+        <button id="uploadBtn">Upload</button>
 
- 
+        <div class="gallery" id="gallery"></div>
+    </div>
 
-  <h1>Video Streaming Example</h1>
-  <video controls width="640" height="360">
-    <source src="https://github.com/username/repository-name/releases/download/v1.0/your-video-file.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-
-
-  </div>
+    <script src="script.js"></script>
 </body>
 </html>
