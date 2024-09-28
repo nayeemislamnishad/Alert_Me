@@ -5,24 +5,18 @@ document.getElementById('uploadBtn').addEventListener('click', function() {
 
     for (let i = 0; i < files.length; i++) {
         const file = files[i];
-        const reader = new FileReader();
+        const fileType = file.type.split('/')[0]; // Get the file type (image or video)
+        let mediaElement;
 
-        reader.onload = function(e) {
-            const fileType = file.type.split('/')[0]; // Get the file type (image or video)
-            let mediaElement;
+        if (fileType === 'image') {
+            mediaElement = document.createElement('img');
+            mediaElement.src = URL.createObjectURL(file); // Use Object URL for images
+        } else if (fileType === 'video') {
+            mediaElement = document.createElement('video');
+            mediaElement.src = URL.createObjectURL(file); // Use Object URL for videos
+            mediaElement.controls = true; // Show video controls
+        }
 
-            if (fileType === 'image') {
-                mediaElement = document.createElement('img');
-                mediaElement.src = e.target.result; // Set image source
-            } else if (fileType === 'video') {
-                mediaElement = document.createElement('video');
-                mediaElement.src = e.target.result; // Set video source
-                mediaElement.controls = true; // Show video controls
-            }
-
-            gallery.appendChild(mediaElement); // Add media to gallery
-        };
-
-        reader.readAsDataURL(file); // Read the file
+        gallery.appendChild(mediaElement); // Add media to gallery
     }
 });
